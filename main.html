@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithms</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="heading">SORTING ALGORITHMS</h1>
+    <h3>What is Sorting?</h3>
+    <p class="p" >
+        A Sorting Algorithm is used to rearrange a given array or list of elements according to a comparison operator on the elements.
+         The comparison operator is used to decide the new order of elements in the respective data structure.
+    </p>
+    <h3>&#x2022; Choose the type of sorting </h3>
+    <button class="btn" id="btn1" onclick="openquicksort()">Quick sort</button>
+    <button class="btn" id="btn2" onclick="openbubblesort()">Bubble sort</button>
+    <button class="btn" id="btn3" onclick="openselectionsort()">Selection sort</button>
+    <button class="btn" id="btn4" onclick="openmerge()">Merge sort</button>
+    
+</div>
+<script>
+function openquicksort()
+{
+    window.location.href="quick.html";
+}
+function openbubblesort(){
+    window.location.href="bubble.html";
+}
+function openselectionsort(){
+    window.location.href="selection.html";
+}
+function openmerge(){
+    window.location.href="merge.html";
+}
+</script>
+</body>
+</html>

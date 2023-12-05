@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SelectionSort</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">SELECTION SORT ALGORITHM</h1>
+    <h2>&#x2022; What is SelectionSort ?</h2>
+        <P class="p" id="p">
+            Selection sort is a straightforward and effective sorting
+             algorithm that functions by continually choosing the largest
+              (or smallest) element from the list's unsorted section and 
+              shifting it to the sorted section. 
+        </P>
+
+    <h3>&#x2022; How dose SelectionSort Algorithm works</h3>
+    <P class="p" id="p">
+        &#x2024; Selection sort is an effective and efficient sort algorithm based on comparison operations.<br>
+        &#x2024; It adds one element in each iteration.<br>
+        &#x2024; You need to select the smallest element in the array and move it to the beginning of the array by swapping with the front element.<br>
+        &#x2024; You can also accomplish this by selecting the most potent element and positioning it at the back end.<br>
+        &#x2024; In each iteration, selection sort selects an element and places it in the appropriate position.<br>
+    </P>
+    <br>
+    <h3>&#x2022; Code I used for SelectionSort Algorithm in JavaScript</h3>
+    <pre>
+        const selection=(arr,low,high)=>
+        {
+             for(let i=low;i<=high;i++){
+                 for(let j=i;j<=high;j++){
+                     if(arr[i]>arr[j]){
+                         [arr[i],arr[j]]=[arr[j],arr[i]];  //swap----
+                     }
+
+                   }
+            }return arr
+
+        }
+        button2.addEventListener("click",()=>
+        {
+            let q = parseInt(prompt("Enter the size of array to sort : "));
+            let arr = [];
+            for (let i = 0; i < q; i++) {
+                let b = parseInt(prompt("Enter values to store in array :"));
+                arr.push(b);
+            }
+
+            p2.innerText = "Original Array: " + arr.join(", ");
+            selection(arr, 0, arr.length - 1);
+            p2.innerText += "\nSorted Array: " + arr.join(", ");
+        })
+        </pre>
+        <h2 id="result3">&#x2023; For Code Execution click the button below</h2>
+        <button  class="btn" id="btn3">Execute</button>
+        <br>
+        <br>
+        <button onclick="goback()">Go Back</button>
+
+    <script src="selection.js"></script>
+
+    </div>
+</body>
+</html>

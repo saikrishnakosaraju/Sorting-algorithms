@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BubbleSort</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">BUBBLE SORT ALGORITHM</h1>
+        <h2>&#x2022; What is BubbleSort ?</h2>
+        <P class="p" id="p">
+            A basic sorting algorithm called bubble sort compares the entries next 
+            to each other in the list and swaps them if the elements are not in the 
+            correct order. It is a stable sorting method that works in-place and may
+             be used to sort objects in data structures like linked lists and arrays.
+        </P>
+
+    <h3>&#x2022; How dose BubbleSort Algorithm works</h3>
+    <P class="p" id="p">
+        In Bubble Sort algorithm, 
+        <br>
+        &#x2022; traverse from left and compare adjacent elements and the higher one is placed at right side.<br> 
+        &#x2022; In this way, the largest element is moved to the rightmost end at first.<br>
+        &#x2022; This process is then continued to find the second largest and place it and so on until the data is sorted.
+    </P>
+    <br>
+    <h3>&#x2022; Code I used for BubbleSort Algorithm in JavaScript</h3>
+    <pre>
+        const bubble=(arr,low,high)=>{
+            for(let i=low;i<=high;i++)
+            {
+                for(let j=low;j<=high-i;j++)
+                {
+                    if(arr[j]>arr[j+1])
+                    {
+                        let temp=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=temp;
+                    }
+                }
+            }return arr;
+        
+        }
+        button2.addEventListener("click",()=>{
+            let q = parseInt(prompt("Enter the size of array to sort : "));
+            let arr = [];
+            for (let i = 0; i < q; i++) {
+                let b = parseInt(prompt("Enter values to store in array :"));
+                arr.push(b);
+            }
+        
+            p2.innerText = "Original Array: " + arr.join(", ");
+            bubble(arr, 0, arr.length - 1);
+            p2.innerText += "\nSorted Array: " + arr.join(", ");
+        })
+        </pre>
+        <h2 id="result2">&#x2023; For Code Execution click the button below</h2>
+        <button  class="btn" id="btn2">Execute</button>
+        <br>
+        <br>
+        <button onclick="goback()">Go Back</button>
+    </div>
+
+    <script src="bubble.js"></script>
+</body>
+</html>

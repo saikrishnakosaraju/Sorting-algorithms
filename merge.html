@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MergeSort</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">MERGE SORT ALGORITHM</h1>
+        <h2>&#x2022; What is MergeSort ?</h2>
+            <P class="p" id="p">
+                &#x2023;    The sorting method known as merge sort operates 
+                by first splitting an array into smaller subarrays, 
+                sorting each subarray separately, and then combining 
+                the sorted subarrays back into the original array to 
+                create the final sorted array.
+            </P>
+    
+        <h3>&#x2022; How dose MergeSort Algorithm works</h3>
+        <P class="p" id="p">
+   &#x2023; Merge sort is a recursive algorithm that continuously 
+            splits the array in half until it cannot be further divided
+            i.e., the array has only one element left (an array with one 
+            element is always sorted). Then the sorted subarrays are merged
+            into one sorted array.
+        </P>
+        <br>
+        <h3>&#x2022; Code I used for MergeSort Algorithm in JavaScript</h3>
+        <pre>const mergesort=(arr,low,high)=>
+            {   
+                if(low<high)
+                {
+                    let mid=Math.floor((low+high)/2)
+                    mergesort(arr,low,mid);
+                    mergesort(arr,mid+1,high);
+                    merge(arr,low,mid,high);
+                
+                }
+                else return arr;
+            }
+            const merge=(arr,low,mid,high)=>
+            {
+                let temp=[]; 
+                let left=low;
+                let right=mid+1;
+                while(left<=mid && right<=high)
+                {
+                    if(arr[left]<arr[right])
+                    {
+                        temp.push(arr[left]);
+                        left++
+                    }
+                    else
+                    {  temp.push(arr[right]);
+                        right++
+                    }
+                }
+                while(left<=mid){
+                    temp.push(arr[left])
+                    left++;
+                }
+                while(right<=high){
+                    temp.push(arr[right])
+                    right++;
+                }
+                for(let i=low;i<=high;i++){
+                    arr[i]=temp[i-low]
+                }
+            }
+            button1.addEventListener("click", () => {
+                let s = parseInt(prompt("Enter the size of array to sort : "));
+                let arr = [];
+                for (let i = 0; i < s; i++) {
+                    let b = parseInt(prompt("Enter values to store in array :"));
+                    arr.push(b);
+                }
+            
+                p1.innerText = "Original Array: " + arr.join(", ");
+                mergesort(arr, 0, arr.length - 1);
+                p1.innerText += "\nSorted Array: " + arr.join(", ");
+            });
+            
+            
+        </pre>
+            <h2 id="result4">&#x2023; For Code Execution click the button below</h2>
+            <button  class="btn" id="btn4">Execute</button>
+            <br>
+            <br>
+            <button onclick="goback()">Go Back</button>
+        </div>
+        <script src="merge.js"></script>
+    
+</body>
+</html>

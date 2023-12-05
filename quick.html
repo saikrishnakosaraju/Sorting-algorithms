@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Sort</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div class="container">
+    <h1 class="heading">QUICK SORT ALGORITHM</h1>
+    <h2>&#x2022; What is QuickSort ?</h2>
+        <P class="p" id="p">
+            QuickSort is a sorting method that uses the Divide and Conquer
+             algorithm as its foundation. 
+            It selects an element to act as a pivot and 
+            divides the array around it by putting the pivot 
+            correctly within the sorted array.
+        </P>
+
+    <h3>&#x2022; How dose QickSort Algorithm works</h3>
+    <P class="p" id="p">
+        The key process in quickSort is a partition(). 
+        The target of partitions is to place the pivot 
+        (any element can be chosen to be a pivot) 
+        at its correct position in the sorted array and 
+        put all smaller elements to the left of the pivot, 
+        and all greater elements to the right of the pivot.
+        <br>
+        Partition is done recursively on each side of the pivot after the pivot is placed 
+        in its correct position and this finally sorts the array.
+    </P>
+    <br>
+    <h3>&#x2022; Code I used for QuickSort Algorithm in JavaScript</h3>
+    <pre>
+        const quicksort=(arr,low,high)=>
+        {
+            if(low<high){
+               let pi= partition(arr,low,high)
+               quicksort(arr,low,pi-1);
+               quicksort(arr,pi+1,high);
+            }
+        }
+        const partition = (arr, low, high) => {
+            let pivotelement = arr[high];
+            let pivotpoit = low - 1;
+        
+            for (let i = low; i < high; i++) {
+                if (arr[i] < pivotelement) {
+                    let temp = arr[pivotpoit + 1];
+                    arr[pivotpoit + 1] = arr[i];
+                    arr[i] = temp;
+                    pivotpoit++;
+                }
+            }
+        
+            let temp2 = arr[high];
+            arr[high] = arr[pivotpoit + 1];
+            arr[pivotpoit + 1] = temp2;
+            
+            return pivotpoit + 1;
+        }
+               let s=prompt("Enter the size of array to sort : ");
+            let arr=[];
+            for(let i=0;i<=s;i++)
+            {
+                let b=parseInt(prompt("enter values values to store in arra :"));
+                arr.push(b);
+            }
+            console.log(arr)
+        
+        quicksort(arr,0,arr.length-1)
+        console.log(arr.join(" "));
+        </pre>
+        <h2 id="result">&#x2023; For Code Execution click the button below</h2>
+        <button  class="btn" id="btn1">Execute</button>
+        <br>
+        <br>
+        <button onclick="goback()">Go Back</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
